@@ -472,7 +472,7 @@ footer{
     opacity: 0.5;
 }
 
-.subscriptions{       
+#pricing{       
     background-image: url(images/background-img.png);
     background-blend-mode: multiply;
     background-size: cover;
@@ -480,7 +480,7 @@ footer{
     padding-bottom:180px ;
 }
 
-.subscriptions > h1{
+#pricing > h1{
     font-family: var(--main-font);
     font-weight: 700;
     font-size: 15px;
@@ -492,7 +492,7 @@ footer{
     text-align: center;
 }
 
-.subscriptions > h2{
+#pricing > h2{
     font-family: var(--main-font);
     font-weight: 700;
     font-size: 48px;
