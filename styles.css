@@ -300,6 +300,11 @@ footer{
     gap:100px;
     align-items: center;
 }
+
+.design-text {
+    align-self: flex-start;
+}
+
 .design-text > h1{
     font-family: var(--main-font);
     font-weight: 700;
@@ -357,10 +362,6 @@ footer{
     line-height: 28px;
     color: var(--secondary-text-color);
     padding-right: 87px;
-}
-.design-img{
-    width: 388px;
-    height: 693px;
 }
 
 
