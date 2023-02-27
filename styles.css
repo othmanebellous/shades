@@ -5,7 +5,6 @@
 }
 
 :root{
-    --main-font: 'Karla', sans-serif;
     --secondary-font:'Rubik', sans-serif;
     --main-text-color: #1F1F1F;
     --secondary-text-color: #666666;
@@ -18,6 +17,7 @@ scroll-behavior: smooth;
 }
 
 body{
+    font-family: 'Karla', sans-serif;
     background-color: #E3EEF8;
 }
 
@@ -27,39 +27,41 @@ header{
     gap: 60px;
     padding-top: 43px;;
 }
-
+h2{
+    font-weight: 700;
+}
 nav{
     display: flex;
     justify-content: space-between;
-    width: 100%;
 }
 
+ul{
+    list-style: none;
+}
 nav ul{
     display: flex;
     align-items: center;
-    list-style: none;
+    
     gap:40px;
 }
 
 nav a{
     text-decoration: none;
-    font-family: var(--main-font);
     color: var(--main-text-color);
-    font-weight: 400;
-    font-size: 16px;
     line-height: 19px;
     letter-spacing: -0.4px;
 }
 
-hr{
-    border: 1px solid var(--white-color);
-    max-width:1111px;
-    margin: 0 auto;;
+.btn{
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.9px;
+    padding: 20px 61px;
 }
-
-input[type="email"]{
-    font-family: var(--main-font);
-    font-weight: 400;
+.email{
     font-size: 18px;
     line-height: 21px;
     letter-spacing: -0.9px;
@@ -70,21 +72,14 @@ input[type="email"]{
     max-width: 275px;
 }
 
-input[type="email"]:focus{
+.email:focus{
     outline: none;
 }
 
-input[type="submit"]{
+.submit{
     border: none;
-    border-radius: 5px;
     background-color:#FC593B;
-    font-family: var(--main-font);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: -0.9px;
     color: var(--white-color);
-    padding: 20px 61px;
     cursor: pointer;
 }
 
@@ -95,8 +90,6 @@ form{
 }
 
 form + p{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     text-align: center;
@@ -109,43 +102,39 @@ footer{
     padding: 160px 0px;
 }
 
+span{
+    font-weight: 700;
+}
+
 .container{
     max-width: 1110px;
     margin: 0 auto;
 }
 
-.logo-container{
+.logo a{
     display: flex;
-    gap:11px;
     align-items: center;
+    gap: 10px;
     text-decoration: none;
-    max-width: 113px;
+    font-family: var(--secondary-font);
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    color: var(--main-text-color);
 }
 
-.logo-image{
-    width:21px;
-}
-
-.logo-text{
-  font-family: var(--secondary-font);
-  font-size: 25px;
-  line-height: 30px;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: -1px;
-  color: var(--main-text-color);
-}
 
 .cta-button{
     border: 2px solid var(--blue-color);
     border-radius: 3px;
     padding: 10px 30px;
     background-color: transparent;
-    font-weight: 700;
     text-align: center;
     letter-spacing: -1px;
     color: var(--blue-color);
     transition-duration: 0.3s;
+    margin-left: auto;
 }
 
 .cta-button:hover{
@@ -157,9 +146,8 @@ footer{
     padding-top: 165px;
 }
 
-.intro-text h1{
-    font-family: var(--main-font);
-    font-weight: 700;
+.intro-text span{
+    display: block;
     font-size: 15px;
     line-height: 18px;
     text-align: center;
@@ -169,8 +157,7 @@ footer{
     margin-bottom: 27px;
 }
 
-.intro-text h2{
-    font-family: var(--main-font);
+.intro-text h1{
     font-weight: 700;
     font-size: 70px;
     line-height: 70px;
@@ -183,8 +170,6 @@ footer{
 }
 
 .intro-text p{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 21px;
     line-height: 36px;
     text-align: center;
@@ -197,6 +182,21 @@ footer{
 #features{
     padding: 165px 0px;
 }
+#services{
+    position: relative;
+}
+
+#services::after{
+    content: '';
+    position: absolute;
+    width: 1110px;
+    max-width: 100%;
+    height: 2px;
+    background-color: var(--white-color);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
 
 .features-content{
     display: flex;
@@ -204,27 +204,38 @@ footer{
     align-items: center;
 }
 
-.feature{
-    display: flex;
-    gap:25px;
+.feature {
+    margin-left: 100px;
 }
 
-.feature img{
+.feature-text::before{
     width: 36px;
     height: 36px;
+    position: absolute;
+    left: -60px;
+    top: 8px;
+}
+.feat-one::before{
+    content: url(images/pen.png);
+}
+.feat-two::before{
+    content: url(images/layers.png);
+}
+.feat-three::before{
+    content: url(images/responsive.png);
+}
+
+.feature-text{
+    position: relative;
 }
 
 .feature-text h2{
-    font-family: var(--main-font);
-    font-weight: 700;
     font-size: 21px;
     line-height: 32px;
     letter-spacing: -1px;
 }
 
 .feature-text p{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 17px;
     line-height: 28px;
     color: var(--secondary-text-color);
@@ -247,9 +258,8 @@ footer{
     width: 500.18px;
 }
 
-.app-text h1{
-    font-family: var(--main-font);
-    font-weight: 700;
+.app-text span{
+    display: block;
     font-size: 15px;
     line-height: 18px;
     letter-spacing: 2.81px;
@@ -259,8 +269,6 @@ footer{
 }
 
 .app-text h2{
-    font-family: var(--main-font);
-    font-weight: 700;
     font-size: 48px;
     line-height: 56px;
     letter-spacing: -2.52px;
@@ -269,8 +277,6 @@ footer{
 }
 
 .app-text p{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 18px;
     line-height: 32px;
     color: #E4E4E4;
@@ -279,15 +285,8 @@ footer{
 
 .app-text a{
     text-decoration: none;
-    border-radius: 5px;
     background-color: var(--white-color);
-    font-family: var(--main-font);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: -0.9px;
     color: var(--blue-color);
-    padding: 20px 61px;
 }
 
 .design{
@@ -298,16 +297,16 @@ footer{
 .design-container{
     display: flex;
     gap:100px;
-    align-items: center;
 }
 
 .design-text {
-    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.design-text > h1{
-    font-family: var(--main-font);
-    font-weight: 700;
+.design-text span{
+    display: block;
     font-size: 15px;
     line-height: 18px;
     letter-spacing: 2.81px;
@@ -316,9 +315,7 @@ footer{
     margin-bottom: 50px;
 }
 
-.design-text > h2{
-    font-family: var(--main-font);
-    font-weight: 700;
+.design-text h2{
     font-size: 48px;
     line-height: 56px;
     letter-spacing: -2.52px;
@@ -327,9 +324,7 @@ footer{
     margin-bottom: 16px;
 }
 
-.design-text > p{
-    font-family: var(--main-font);
-    font-weight: 400;
+.design-text p{
     font-size: 18px;
     line-height: 32px;
     color: var(--secondary-text-color);
@@ -342,13 +337,29 @@ footer{
     gap: 10px;
 }
 
+.design-feature{
+    position: relative;
+}
+
 .design-feature img{
     width: 60px;
     margin-bottom: 32px;
 }
 
-.design-feature h2{
-    font-family: var(--main-font);
+.design-feature::before{
+    position: absolute;
+    width: 60px;
+    top: -90px;
+}
+.feature-one::before{
+    content: url(images/white-pen.png);
+}
+
+.feature-two::before{
+    content: url(images/window.png);
+}
+
+.design-feature h3{ 
     font-weight: 700;
     font-size: 21px;
     line-height: 32px;
@@ -356,12 +367,11 @@ footer{
     margin-bottom: 13px;
 }
 .design-feature p{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 17px;
     line-height: 28px;
     color: var(--secondary-text-color);
-    padding-right: 87px;
+    padding-right: 100px;
+    margin: 0;
 }
 
 
@@ -374,9 +384,8 @@ footer{
     max-width: 315px;
 }
 
-.testimonial-text h1{
-    font-family: var(--main-font);
-    font-weight: 700;
+.testimonial-text span{
+    display: block;
     font-size: 15px;
     line-height: 18px;
     letter-spacing: 2.81px;
@@ -386,8 +395,6 @@ footer{
 }
 
 .testimonial-text h2{
-    font-family: var(--main-font);
-    font-weight: 700;
     font-size: 48px;
     line-height: 56px;
     letter-spacing: -2.52px;
@@ -396,8 +403,6 @@ footer{
 }
 
 .testimonial-text p{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 18px;
     line-height: 32px;
     color: var(--secondary-text-color);
@@ -432,7 +437,6 @@ footer{
 
 .testimonial p{
     font-family: var(--secondary-font);
-    font-weight: 400;
     font-size: 18px;
     line-height: 32px;
     letter-spacing: -0.1px;
@@ -441,8 +445,6 @@ footer{
 }
 
 .user-info h2{
-    font-family: var(--main-font);
-    font-weight: 700;
     font-size: 17px;
     line-height: 28px;
     letter-spacing: -0.31px;
@@ -450,7 +452,6 @@ footer{
 }
 
 .user-info h3{
-    font-family: var(--main-font);
     font-weight: 400;
     font-size: 15px;
     line-height: 28px;
@@ -481,9 +482,8 @@ footer{
     padding-bottom:180px ;
 }
 
-#pricing > h1{
-    font-family: var(--main-font);
-    font-weight: 700;
+#pricing .pre-heading{
+    display: block;
     font-size: 15px;
     line-height: 18px;
     letter-spacing: 2.81px;
@@ -494,8 +494,6 @@ footer{
 }
 
 #pricing > h2{
-    font-family: var(--main-font);
-    font-weight: 700;
     font-size: 48px;
     line-height: 56px;
     letter-spacing: -2.52px;
@@ -516,26 +514,28 @@ footer{
     position: relative;
     max-width: 350px;
     border-radius: 6px;
-    padding: 30px 65px 30px 45px;
+    padding: 30px 32px 30px 45px;
+    background-color: #2B405A;
+}
+
+.pro-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .popular{
-    position: absolute;
     width: 83px;
     background: #4EAB08;
     border-radius: 13px;
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
     font-size: 12px;
     line-height: 15px;
     letter-spacing: -0.51px;
     text-transform: uppercase;
     color: var(--white-color);
     padding: 5px 14px;
-    top:32px;
-    right: 32px;
-
 }
-.basic-pack{
+pack{
     background-color: #2B405A;
 }
 
@@ -543,9 +543,8 @@ footer{
     background-color: var(--white-color);
 }
 
-.pack h1{
-    font-family: var(--main-font);
-    font-weight: 700;
+.pack-type{
+    display: block;
     font-size: 13px;
     line-height: 32px;
     letter-spacing: 0.43px;
@@ -553,15 +552,15 @@ footer{
     margin-bottom: 26px;
 }
 
-.basic-pack h1{
+.pack-type{
     color: var(--white-color);
 }
 
-.pro-pack h1{
+.pro-pack .pack-type{
     color: var(--secondary-text-color);
 }
 
-.basic-pack .pricing{
+.pack .pricing{
     color: var(--white-color);
 }
 
@@ -569,49 +568,53 @@ footer{
     color: var(--main-text-color);
 }
 
-.currency{
-    position: relative;
-    font-family: var(--main-font);
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;
-    letter-spacing: -1.2px;
-    bottom: 12px;
-}
+
 
 .price{
-    font-family: var(--main-font);
+    position: relative;
     font-weight: 700;
     font-size: 50px;
     line-height: 60px;
     letter-spacing: -2px;
 }
 
-.slash{
-    font-family: var(--main-font);
+.price::before{
+    content: "$";
+    position: relative;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: -1.2px;
+    margin-right: 4px;
+    bottom: 12px;
 }
 
-.month{
-    font-family: var(--main-font);
+.price::after{
+    content: "/";
+    position: relative;
     font-weight: 700;
+    font-size: 25px;
+    margin: 0px 3px;
+    bottom: 0;
+}
+
+
+.month{
     font-size: 17px;
     line-height: 20px;
     letter-spacing: -0.68px;
 }
 
 .pricing + p{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 14px;
     line-height: 23px;
     letter-spacing: -0.4px;
+    padding-right: 33px;
     margin-top: 10px;
     margin-bottom: 26px;
 }
 
-.basic-pack p:first-of-type{
+.pack p:first-of-type{
     color: var(--white-color);
 }
 
@@ -619,81 +622,40 @@ footer{
     color: var(--secondary-text-color);
 }
 
-.included{
+.pack-list li{
     position: relative;
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 17px;
     line-height: 32px;
     letter-spacing: -0.425px;
     margin-bottom: 10px;
-    margin-left: 29px;
-}
-
-.basic-pack .included{
     color: var(--white-color);
 }
-.basic-pack .included::before{
-    content: url(images/check-mark.png);
-    width: 12.59px;
-    height: 9.24px;
-    position: absolute;
-    left: -25px;
+
+.pack-list li::before{
+   content:"\f00c";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   margin-right: 10px;
 }
 
-.pro-pack .included{
+.pro-list li{
     color: var(--main-text-color);
 }
 
-.pro-pack .included::before{
-    content: url(images/black-check-mark.png);
-    width: 12.59px;
-    height: 9.24px;
-    position: absolute;
-    left: -25px;
-}
-
-.not-included{
-    position: relative;
-    font-family: var(--main-font);
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 32px;
-    letter-spacing: -0.425px;
-    text-decoration: line-through;
-    margin-bottom: 10px;
-    margin-left: 29px;
-}
-
-.not-included::before{
-    content: url(images/grey-check-mark.png);
-    width: 12.59px;
-    height: 9.24px;
-    position: absolute;
-    left: -25px;
-}
-
-.not-included{
+.pack-list .del{
     color: #878890;
 }
 
 
 .pack a{
     display: inline-block;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: var(--main-font);
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: -0.9px;
     color: var(--white-color);
     padding: 15px 43px;
     margin-top: 40px;
     margin-bottom: 5px;
 }
 
-.basic-pack a{
+.pack a{
     background-color: var(--blue-color);
 
 }
@@ -703,8 +665,6 @@ footer{
 }
 
 .pack p:last-child{
-    font-family: var(--main-font);
-    font-weight: 400;
     font-size: 14px;
     line-height: 28px;
     letter-spacing: -0.4px;
@@ -717,9 +677,6 @@ footer{
 }
 
 .left-side p{
-    font-family: var(--main-font);
-    font-weight: 400;
-    font-size: 16px;
     line-height: 28px;
     letter-spacing: -0.4px;
     color: var(--secondary-text-color);
@@ -742,9 +699,8 @@ footer{
     gap: 90px;
 }
 
-.links-container h2{
-    font-family: var(--main-font);
-    font-weight: 700;
+.links-container span{
+    display: block;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: -0.4px;
@@ -752,13 +708,15 @@ footer{
     margin-bottom: 50px;
 }
 
+.footer-links li{
+    margin-bottom: 20px;
+}
+
 .links-container a{
     display: block;
-    font-family: var(--main-font);
     font-weight: 700;
     font-size: 15px;
     letter-spacing: -0.4px;
     color: var(--main-text-color);
     text-decoration: none;
-    margin-bottom: 20px;
 }
